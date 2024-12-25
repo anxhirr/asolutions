@@ -4,7 +4,7 @@
 </a>
 
 <p align="center">
-  Start at full speed with ASolutions !
+  Start at full speed with ASolutions!
 </p>
 
 <p align="center">
