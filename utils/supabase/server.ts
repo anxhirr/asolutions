@@ -1,6 +1,8 @@
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const clientCreator = ({
   supabaseUrl,
   supabaseKey,
@@ -18,7 +20,10 @@ const clientCreator = ({
       setAll(cookiesToSet) {
         try {
           cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options);
+            cookieStore.set(name, value, {
+              domain: isDev ? "localhost" : ".asolutions.al", // https://github.com/supabase/supabase/issues/473#issuecomment-2543434925
+              ...options,
+            });
           });
         } catch (error) {
           // The `set` method was called from a Server Component.
