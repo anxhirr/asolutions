@@ -11,6 +11,7 @@ import { siteConfig } from "@/config/site";
 import { Modal } from "@/components/ui/modal";
 
 import { CheckoutForm } from "../forms/checkout-form";
+import { DialogTitle } from "../ui/dialog";
 
 function SubscriptionModal({
   showModal,
@@ -21,6 +22,7 @@ function SubscriptionModal({
 }) {
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
+      <DialogTitle className="sr-only" />
       <div className="w-full">
         <div className="flex flex-col items-center justify-center space-y-3 border-b bg-secondary px-4 py-6 pt-8 text-center md:px-16">
           <a href={siteConfig.url}>

@@ -20,5 +20,12 @@ export const getPayPalAccessToken = async () => {
   });
 
   const data = await response.json();
-  return data;
+  return data as {
+    scope: string;
+    access_token: string;
+    token_type: string;
+    app_id: string;
+    expires_in: number;
+    nonce: string;
+  };
 };
