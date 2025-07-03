@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(body),
     });
     const data = (await res.json()) as SubscriptionResponseBody;
+    console.log("data", data);
     const subscriptionId = data.id;
     if (!subscriptionId) {
       return NextResponse.json(
