@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
     const body: CreateSubscriptionRequestBody = {
       plan_id: planId,
     };
+    console.log("body", body);
     const res = await fetch(`${endpoint}/v1/billing/subscriptions`, {
       method: "POST",
       headers: {
